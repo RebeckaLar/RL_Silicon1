@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+    
+:root {
+    --gray-600: #9397AD;
+    --gray-700: #565973;
+    --gray-800: #33354D;
+    --gray-900: #0B0F19;
+    --clr-primary: #6366F1;
+}
+
+body {
+    font-family: "Manrope", system-ui;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.flex {
+    display: flex;
+}
+
+/* Få alla bilder på egen rad */
+img {
+    display: block;
+    width: 100%;
+}
+
+/* ----NAVBAR---- */
+nav {
+    padding-block: .7rem;
+    color: var(--gray-900);
+    font-weight: 700;
+}
+
+.nav-container {
+    width: 100%;
+    padding-inline: 1rem;
+    margin: 0 auto; 
+    justify-content: space-between; 
+    background-color: hotpink;
+
+    @media (width > 768px){
+        max-width: 720px;
+    }
+
+    @media (width > 1400px){
+        max-width: 1320px;
+    }
+}
+
+.main-nav .left-nav, .main-nav .right-nav {
+    gap: 1.5rem;
+}
+
+.features-link, .btn-login, .darkmode-text {
+    display: none;
+}
+
+.features-link {
+    color: var(--gray-800);
+}
+
+.darkmode-text {
+    color: var(--gray-700);
+    font-weight: 700;
+}
+
+.login-link {
+    color: white;
+}
+
+.darkmode-switch {
+    gap: 1rem;
+}
+
+
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 2.9rem;
+    height: 1.5rem;
+
+    /* The slider */
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--gray-600);
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        /* height: 1.25rem;
+        width: 1.25rem; */
+        aspect-ratio: 1;
+        height: calc(100% - 4px);
+        left: 2px;
+        bottom: 2px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    input:checked + .slider {
+        background-color: var(--clr-primary)
+    }
+
+    input:focus + .slider {
+        box-shadow: 0 0 1px #2196F3;
+    }
+
+    /* Cirkeln /slider::before rör sig */
+    input:checked + .slider:before {
+        -webkit-transform: translateX(22px);
+        -ms-transform: translateX(22px);
+        transform: translateX(22px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 34px;
+    }
+    
+    .slider.round:before {
+        border-radius: 50%;
+    }
+}
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+@media (width > 768px) {
+    .darkmode-text {
+        display: block;
+    }
+
+    .main-nav .left-nav, .main-nav .right-nav {
+        gap: 4rem;
+    }
+}
+
+@media (width > 1400px) {
+    .btn-menu {
+        display: none;
+    }
+
+    .features-link, .login-link, .darkmode-text {
+        display: flex;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .login-link {
+        display: flex;
+        gap: .5rem;
+    }
+
+    .login-link img {
+       width: 20px;
+    }
+
+    /* .login-link {
+        gap: 2rem;
+    } */
+
+}
