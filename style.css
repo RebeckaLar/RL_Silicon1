@@ -4,9 +4,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    align-items: center;
 }
     
 :root {
+    --gray-100: #F3F6FF;
+    --grad-300: #E2E5F1;
     --gray-600: #9397AD;
     --gray-700: #565973;
     --gray-800: #33354D;
@@ -18,12 +21,30 @@ body {
     font-family: "Manrope", system-ui;
 }
 
+/* UTILITY CLASSES */
 .align-center {
     align-items: center;
+    text-align: center;
 }
 
 .flex {
     display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+.pb-4 {
+    padding-bottom: 4rem;
 }
 
 /* Få alla bilder på egen rad */
@@ -32,19 +53,17 @@ img {
     width: 100%;
 }
 
-/* ----NAVBAR---- */
+/* NAVBAR */
 nav {
     padding-block: .7rem;
     color: var(--gray-900);
-    font-weight: 700;
 }
 
 .nav-container {
     width: 100%;
-    padding-inline: 1rem;
+    padding-inline: .8rem;
     margin: 0 auto; 
     justify-content: space-between; 
-    background-color: hotpink;
 
     @media (width > 768px){
         max-width: 720px;
@@ -56,7 +75,7 @@ nav {
 }
 
 .main-nav .left-nav, .main-nav .right-nav {
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 .features-link, .btn-login, .darkmode-text {
@@ -72,15 +91,19 @@ nav {
     font-weight: 700;
 }
 
-.login-link {
-    color: white;
+.btn-menu {
+    background-color: transparent;
+    border: 0;
+    padding: .5rem;
+}
+
+.btn-login {
+    color: #fff;
 }
 
 .darkmode-switch {
     gap: 1rem;
 }
-
-
 
 /* The switch - the box around the slider */
 .switch {
@@ -100,6 +123,7 @@ nav {
         background-color: var(--gray-600);
         -webkit-transition: .4s;
         transition: .4s;
+        box-shadow: 0px 8px 18px 8px #dcdcff;
     }
 
     .slider:before {
@@ -111,7 +135,7 @@ nav {
         height: calc(100% - 4px);
         left: 2px;
         bottom: 2px;
-        background-color: white;
+        background-color: #fff;
         -webkit-transition: .4s;
         transition: .4s;
     }
@@ -147,13 +171,184 @@ nav {
     height: 0;
 }
 
+/* MAIN */
+main {
+    margin: 0 auto; 
+    @media (width > 768px){
+        max-width: 720px;
+    }
+
+    @media (width > 1400px){
+        max-width: 1320px;
+    }
+}
+
+section {
+    padding-inline: .8rem;
+}
+
+.display-text {
+    color: var(--gray-900);
+    font-weight: 800;
+}
+
+.leadText {
+    font-size: 1.1rem;
+}
+
+.bodyText {
+    color: var(--gray-700);
+    font-weight: 400;
+}
+
+/* Showcase section */
+.showcase {
+    background-image: radial-gradient(
+        farthest-side at 50% 100%, 
+        #6365f11e,
+        #db46ef17, 
+        rgb(255, 255, 255));
+}
+
+.displayOne {
+    font-size: 2.2rem;
+}
+
+.btn-download {
+    background-color: var(--gray-900);
+    width: 100%;
+    height: 3.1rem;
+    border: 0;
+    border-radius: .7rem;
+    justify-content: center;
+}
+
+.btn-download img {
+    width: 35%;
+}
+
+.discoverMore {
+    gap: 1rem;
+}
+
+.discoverMore img {
+    scale: 45%;
+    height: 20px;
+}
+
+.btn-discover {
+    width: 3rem;
+    height: 3rem;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 0px;
+}
+
+/* Features section */
+.displayTwo {
+    font-size: 1.6rem;
+}
+
+.displayThree {
+    font-size: 1.3rem;
+}
+
+.card-icon {
+    width: 7svh;
+    background-color: var(--gray-100);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.card {
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+/* How Does It Work? section */
+.howDoesItWork {
+    background-color: var(--gray-100);
+}
+
+.howDoesItWork h2 {
+    padding-top: 4rem;
+}
+
+.phone-container {
+    position: relative;
+    margin: auto;
+}
+
+.phone-img {
+    position: absolute;
+    width: 70%;
+    transform: translateX(23%);
+}
+
+.showcase-container {
+    width: 70%;
+    transform: translateX(23%);
+}
+
+/* FAQ section*/
+.faq-cards {
+    border: var(--grad-300) solid 1px;
+    border-top-left-radius: .7rem;
+    border-top-right-radius: .7rem
+}
+
+.faq-card {
+    flex-direction: column;
+}
+
+.faq {
+    font-size: 1rem;
+    font-weight: 600;
+    padding-inline: 1.5rem;
+    padding-block: 1rem;
+}
+
+.faqText {
+    border-top: var(--grad-300) solid 1px;
+    border-bottom: var(--grad-300) solid 1px;
+    font-size: .8rem;
+    padding-inline: 1.5rem;
+    padding-block: 1rem;
+}
+
+.faq-btn, .prev-btn {
+    width: 2.8em;
+    height: 2.8em;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 0;
+}
+
+.faq-btn {
+    background-color: var(--clr-primary);
+}
+
+.prev-btn {
+    background-color: var(--gray-100);
+}
+
+.faq-btn img, .prev-btn img {
+    scale: 30%;
+}
+
+
+/* Larger devices */
 @media (width > 768px) {
     .darkmode-text {
         display: block;
     }
 
-    .main-nav .left-nav, .main-nav .right-nav {
-        gap: 4rem;
+.main-nav .left-nav {
+        gap: 3rem;
+        }
+
+.main-nav .right-nav {
+        gap: 2rem;
     }
 }
 
@@ -162,23 +357,23 @@ nav {
         display: none;
     }
 
-    .features-link, .login-link, .darkmode-text {
+    .features-link, .btn-login, .darkmode-text {
         display: flex;
         text-decoration: none;
         font-weight: 600;
     }
 
-    .login-link {
-        display: flex;
-        gap: .5rem;
+    .btn-login {
+        cursor: pointer;
+        gap: .8rem;
+        background-color: var(--clr-primary);
+        padding-block: .4rem;
+        border-radius: .4rem;
+        font-size: .875rem;
+        padding: .6rem 1.6rem
     }
 
-    .login-link img {
-       width: 20px;
+    .btn-login img {
+       width: 15px;
     }
-
-    /* .login-link {
-        gap: 2rem;
-    } */
-
 }
