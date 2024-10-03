@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Silicon</title>
+
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
     <!-- <div class="wrapper"> -->
@@ -135,7 +137,7 @@
                     </div>
             </section>
             <section class="howDoesItWork mb-2">
-                <h2 class="displayTwo display-text mb-2 align-center">How Does It Work?</h2>
+                <h2 class="displayTwo display-text mb-2 pt-4 align-center">How Does It Work?</h2>
                 <div class="phone-container">
                     <img src="images/Image.svg" class="phone-img" alt="Black iPhone framing the UI showcase.">
                     <img src="images/Container.svg" class="showcase-container mb-2">
@@ -146,12 +148,12 @@
                     ultrices. Pellentesque volutpat ligula est. Mattis
                     fermentum, at nec lacus.</p>
             </section>
-            <section class="mb-2">
+            <section>
                 <h2 class="displayTwo display-text mb-1 align-center">Any questions? Check out the FAQs</h2>
                 <p class="leadText bodyText mb-2 align-center">Still have unanswered questions and need
                     to get in touch?</p>
-                <div class="faq-cards mb-2">
-                    <div class="faq-card">
+                <div class="faq-cards">
+                    <div>
                         <header class="flex faq">
                             <p class="displayText">Is any of my personal information
                                 stored in the App?</p>     
@@ -183,7 +185,62 @@
                     <div class="faq-card">
                         <header class="flex faq">
                             <p class="displayText">What formats can I download my
-                                transaction history in?</p>                            <div>
+                                transaction history in?</p>                            
+                            <div>
+                                <button class="prev-btn">
+                                    <img src="images/gray_arrow.svg" alt="">
+                                </button>
+                            </div>                        
+                        </header>
+                    </div>
+                    <div class="faq-card">
+                        <header class="flex faq">
+                            <p class="displayText">Can I schedule future transfers?</p>                            
+                            <div>
+                                <button class="prev-btn">
+                                    <img src="images/gray_arrow.svg" alt="">
+                                </button>
+                            </div>                        
+                        </header>
+                    </div>
+                    <div class="faq-card">
+                        <header class="flex faq">
+                            <p class="displayText">When can I use Banking App
+                                services?</p>                            
+                            <div>
+                                <button class="prev-btn">
+                                    <img src="images/gray_arrow.svg" alt="">
+                                </button>
+                            </div>                        
+                        </header>
+                    </div>
+                    <div class="faq-card">
+                        <header class="flex faq">
+                            <p class="displayText">What formats can I download my
+                                transaction history in?</p>                            
+                            <div>
+                                <button class="prev-btn">
+                                    <img src="images/gray_arrow.svg" alt="">
+                                </button>
+                            </div>                        
+                        </header>
+                    </div>
+                    <div class="faq-card">
+                        <header class="flex faq">
+                            <p class="displayText">Can I create my own password that is
+                                easy for me to remember?</p>                            
+                            <div>
+                                <button class="prev-btn">
+                                    <img src="images/gray_arrow.svg" alt="">
+                                </button>
+                            </div>                        
+                        </header>
+                    </div>
+                    <div class="faq-card">
+                        <header class="flex faq">
+                            <p class="displayText">What happens if I forget or lose my
+                                password?</p>                            
+                            <div>
                                 <button class="prev-btn">
                                     <img src="images/gray_arrow.svg" alt="">
                                 </button>
@@ -191,9 +248,35 @@
                         </header>
                     </div>
                 </div>
+                <div class="align-center pt-4 mb-2">
+                    <button class="contact-btn">Contact us now</button>
+                </div>
             </section>
         </main>
-        <footer></footer>
+        <footer>
+            <div class="subscribe flex mb-2">
+                <div class="newsletter flex mb-2">
+                    <img src="images/notification-icon-1.svg fill.svg" alt="Notification bell icon.">
+                    <h3 class="display-text">Subscribe to our newsletter</h3>
+                </div>
+                <!-- <div> -->
+                    <div class="form-container flex">
+                        <form class="flex">
+                            <div class="img-container">
+                                <img src="images/mail_icon.svg" class="envelope">
+                                <!-- <i class="fa-regular fa-envelope"></i> -->
+                            </div>
+                            <div>
+                                <input type="text" class ="email-input" placeholder="Your email">
+                            </div>
+                            <button class="footer-btn" type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                <!-- </div> -->
+            </div>
+            <p class="align-center mb-2">© 2024 Silicon. All rights reserved. 
+                <br>Credit MadrasThemes</p>
+        </footer>
     <!-- </div> -->
 </body>
 </html>
