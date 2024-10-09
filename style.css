@@ -54,6 +54,10 @@ body {
     margin-bottom: 2rem;
 }
 
+.mb-3 {
+    margin-bottom: 3rem;
+}
+
 .pb-4 {
     padding-bottom: 4rem;
 }
@@ -198,17 +202,6 @@ nav {
 }
 
 /* MAIN */
-main {
-    /* margin: 0 auto;  */
-}
-
-/* showcase sectionen: 100vw 
-inne i showcase, har en div som wrap allt innehåll i showcase, den diven har satt
-en max width på så bred som desktop, 
-dive n inuti har desired bredd
-bakgrunden ligger i section, klassen til lsction 
-*/
-
 /* Showcase section */
 .showcase-background {
     background-image: radial-gradient(
@@ -218,6 +211,7 @@ bakgrunden ligger i section, klassen til lsction
         rgb(255, 255, 255));
         flex-direction: column;
         position: relative;
+        justify-content: center;
     }
 
 .displayOne {
@@ -274,7 +268,6 @@ bakgrunden ligger i section, klassen til lsction
 /* Brands section */
 .brands {
     display: none;
-    gap: 1rem;
 }
 
 .brand-img {
@@ -289,7 +282,7 @@ bakgrunden ligger i section, klassen til lsction
 }
 
 /* Features section */
-.app-features {
+.app-features, .app-features-background {
     justify-content: space-between;
     gap: 11rem;
 }
@@ -297,6 +290,7 @@ bakgrunden ligger i section, klassen til lsction
 .app-features-phone {
     flex: 1;
     display: none;
+    
 }
 
 .app-features-list {
@@ -340,18 +334,21 @@ bakgrunden ligger i section, klassen til lsction
 }
 
 /* How Does It Work? section */
-.howDoesItWork {
+.howdoesitwork-background {
     background-color: var(--gray-100);
-}
-
-.showcase-wrapper {
     justify-content: space-evenly;
+    flex-direction: column;
 }
 
 .ui-showcase1, .ui-showcase3 {
     .phone-img1, .phone-img3 {
         display: none;
     }
+}
+
+.three-phones-container {
+    flex-direction: row;
+    justify-content: center;
 }
 
 .phone-container {
@@ -369,9 +366,9 @@ bakgrunden ligger i section, klassen til lsction
     width: 90%;
 }
 /* Learn more section */
-.learnmore {
+.learnmore-background{
     display: none;
-    margin-inline: 4%;
+    /* margin-inline: 4%; */
     
     button {
         background-color: var(--clr-primary);
@@ -404,16 +401,19 @@ ul li {
     gap: 2rem;
 }
 
-/* Testimonials section */
-.testimonials {
+/* testimonials-background section */
+.testimonials-background {
     display: none;
     background-color: var(--gray-100);
-    gap: 3rem;
 
     img {
         width: 20%;
         padding: 0 0 1.5rem 1.5rem;
     }
+}
+
+.testimonials {
+    gap: 8rem;
 }
 
 .testimonial-cards {
@@ -441,7 +441,7 @@ ul li {
 }
 
 /* FAQ section*/
-.faq {
+.faq-background {
     display: block;
 }
 
@@ -572,6 +572,7 @@ ul li {
 
 /* FOOTER */
 footer {
+    flex-direction: column;
     br {
         display: block;
     }
@@ -585,22 +586,29 @@ footer {
         font-weight: 400;
     }
 }
-    
+
 .subscribe {
-    flex-direction: column;
     background-color: var(--gray-100);
+    border-radius: .5rem;
+    width: 1296px;
+    flex-direction: column;
     padding-inline: 1rem;
     padding-block: 2.5rem;
-    border-radius: .5rem;
+    justify-content: center;
 }
 
 .newsletter {
     gap: 1rem;
     padding-bottom: 2rem;
+    justify-content: center;
 }
 
 .newsletter img {
     width: 25%; 
+}
+
+.form-container {
+    justify-content: center
 }
 
 .email-input, .footer-btn {
@@ -661,10 +669,6 @@ input::placeholder {
     }
 
     /* Tablet - MAIN */
-    main {
-        /* max-width: 768px; */
-    }
-
     .displayOne {
         font-size: 2.8rem;
         margin-inline: 9rem;
@@ -687,10 +691,13 @@ input::placeholder {
     }
 
     .mobile-showcase {
-        display: flex;
         align-content: start;
-        justify-content: left;
-        align-items: flex-end;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .showcase header {
+        justify-content: center;
     }
 
     .showcase-text {
@@ -719,6 +726,7 @@ input::placeholder {
     /* Tablet - Brands section */
     .brands {
         display: flex;
+        gap: 1rem;
     }
 
         /* Tablet - Features section */
@@ -759,6 +767,12 @@ input::placeholder {
     .showcase-container {
         width: 75%;
     }
+
+    .howdoesitwork-background {
+        justify-content: center;
+    }
+
+    
 
     /*  Tablet FAQ section */
     .get-in-touch {
@@ -819,10 +833,6 @@ input::placeholder {
     }
 
     /* Tablet - FOOTER*/
-    footer {
-        max-width: 768px;
-    }
-
     .subscribe {
         padding-block: 4rem;
         flex-direction: row;
@@ -877,9 +887,9 @@ input::placeholder {
     }
 
     /* Desktop - MAIN */
-    main {
+    /* main {
         max-width: 1320px;
-    }
+    } */
 
     /* Desktop Showcase section */
   /* .showcase {
@@ -893,13 +903,25 @@ input::placeholder {
             rgb(102, 102, 102));
     } */
 
-    .showcase-background, .brands-background {
+    .showcase-background, .brands-background, .app-features-background, 
+    .howdoesitwork-wrap, .learnmore-background, .testimonials-background,
+    .faq-background, .subscribe-background {
         width: 100vw;
         height: 100%;
-        display: flex;
         align-items: center;
         justify-content: center;
     } 
+
+    .showcase, .brands, .app-features, .howDoesItWork, .learnmore, 
+    .testimonials, .faq {
+        width: 1296px;
+        margin: 0 auto;
+    }
+
+    .mobile-showcase {
+        justify-content: space-between;
+        align-items: flex-end;
+    }
 
     /* Desktop Brands section */
     .brand-img {
@@ -918,14 +940,14 @@ input::placeholder {
     .displayTwo {
         margin-inline: 0;
     }
-
-    .app-features {
-        justify-content: space-between;
-    }
     
     .app-features-phone {
         display: flex;
         align-items: flex-start;
+
+        img {
+        width: 90%;
+        }
     }
     
     .app-features h2, .app-features p {
@@ -937,43 +959,75 @@ input::placeholder {
     }
 
     /* Desktop How does it work section */
-    /* .howDoesItWork {
-        margin-inline: 4%;
-    } */
+    .three-phones-container {
+        flex-direction: row;
+        justify-content: center;
+        gap: 6rem;
+    }
+    
+    .phone-container {
+        width: 15%;
+        justify-content: center;
+    }
+    
+    .phone-img2 {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .showcase-container {
+        width: 100%;
+    }
 
     /* Desktop Learn more section */
-    .learnmore {
+    .learnmore-background{
         display: block;
     }
 
-    /* Desktop Testimonials section */
-    .testimonials {
+    /* Desktop testimonials-background section */
+    .testimonials-background {
         display: flex;
     }
 
     /* Desktop FAQ section */
     .faq {
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: 1.3fr 1.9fr;
+        gap: 5rem;
+
+        h2 {
+            text-align: left;
+        }
+    }
+
+    .get-in-touch {
+        margin-inline: 0;
+        text-align: left;
     }
 
     .faq-left {
         grid-column: 1;
+        order: 1;
+        grid-row: 1;
     }
 
-    .contact {
+    .further-questions {
         grid-column: 1;
+        order: 2;
+        grid-row: 1;
     }
 
     .faq-cards {
         grid-column: 2;
+        order: 3;
+        grid-row: 1;
     }
 
     /* Desktop FOOTER */
-    footer {
-        max-width: 1320px;
-    }
-    .subscribe {
+    /* footer {
+        max-width: 1296px;
+    } */
+    .subscribe{
         padding-block: 4rem;
         padding-inline: 7rem;
     }
