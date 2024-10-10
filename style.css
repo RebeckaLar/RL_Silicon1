@@ -46,6 +46,10 @@ body {
     display: flex;
 }
 
+.grid {
+    display: grid;
+}
+
 .mb-1 {
     margin-bottom: 1rem;
 }
@@ -204,6 +208,7 @@ nav {
 /* MAIN */
 /* Showcase section */
 .showcase-background {
+    display: flex;
     background-image: radial-gradient(
         farthest-side at 50% 100%, 
         #6365f11e,
@@ -222,15 +227,23 @@ nav {
     display: none;
 }
 
+.showcase header {
+    justify-content: center;
+}
+
 .right-showcase {
     display: none;
     width: 60svh;
-    flex: 1 1 1 ;
+
+    img {
+        width: 90%;
+    }
 }
 
 .download-buttons {
     display: block;
     align-items: center;
+    margin-bottom: 1.5rem;
 }
 
 .btn-download {
@@ -250,6 +263,7 @@ nav {
     justify-content: center;
     gap: 1rem;
     font-size: .9rem;
+    margin-bottom: 2rem;
 }
 
 .discoverMore img {
@@ -690,21 +704,27 @@ input::placeholder {
         margin-inline: 8rem;
     }
 
-    .mobile-showcase {
-        align-content: start;
-        justify-content: space-between;
-        align-items: center;
+    /* .showcase {
+        display: flex;
     }
 
-    .showcase header {
-        justify-content: center;
+    .showcase-grid {
+        display: flex;
+        flex-direction: column;
+    } */
+
+    .mobile-showcase {
+        justify-content: space-between;
+        align-items: flex-end;
     }
 
     .showcase-text {
         text-align: left;
+        line-height: 1.6;
+        margin-bottom: 3rem;
     }
 
-    .showcase, .showcase br, .right-showcase   {
+    .showcase br, .right-showcase   {
         display: block;
     }
 
@@ -714,19 +734,29 @@ input::placeholder {
         align-items: stretch;
         width: 100%;
     }
-    
-    .btn-download img {
-        width: 70%;
+
+    .btn-download {
+        height: 3.3rem;
+
+        img {
+            width: 70%;
+        }
     }
 
     .discoverMore {
         justify-content: left;
+        margin-bottom: 3rem;
     }
 
     /* Tablet - Brands section */
     .brands {
         display: flex;
         gap: 1rem;
+    }
+
+    .brands-background {
+        justify-content: center;
+        width: 100%;
     }
 
         /* Tablet - Features section */
@@ -887,22 +917,6 @@ input::placeholder {
     }
 
     /* Desktop - MAIN */
-    /* main {
-        max-width: 1320px;
-    } */
-
-    /* Desktop Showcase section */
-  /* .showcase {
-        /* content: ""; */
-        /* height: 100vh; */
-        /* position: absolute; */
-        /* background-image: radial-gradient(
-            farthest-side at 50% 100%, 
-            #6365f11e,
-            #db46ef17, 
-            rgb(102, 102, 102));
-    } */
-
     .showcase-background, .brands-background, .app-features-background, 
     .howdoesitwork-wrap, .learnmore-background, .testimonials-background,
     .faq-background, .subscribe-background {
@@ -918,9 +932,43 @@ input::placeholder {
         margin: 0 auto;
     }
 
+    .showcase {
+        padding-top: 4rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: .5fr .1fr .5fr;
+    }
+
+    .showcase header {
+        grid-column: 1;
+        grid-row: 1;
+        justify-content: left;
+        text-align: left;
+    }
+
+    .text-download-wrapper {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .right-showcase {
+        grid-column: 2;
+        grid-row: 1 / span 4;
+    }
+
+    .displayOne {
+        margin: 0 8rem 0 0;
+    }
+
     .mobile-showcase {
-        justify-content: space-between;
-        align-items: flex-end;
+        display: grid;
+        /* justify-content: space-between;
+        align-items: flex-end; */
+    }
+
+    .discoverMore-wrapper {
+        grid-column: 1;
+        grid-row: 4;
     }
 
     /* Desktop Brands section */
