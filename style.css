@@ -8,6 +8,7 @@
     
 :root {
     --btn-text-clr: #fff;
+    --clr-bg: #fff;
     --gray-100: #F3F6FF;
     --gray-300: #E2E5F1;
     --gray-500: #B4B7C9;
@@ -17,10 +18,66 @@
     --gray-900: #0B0F19;
     --clr-primary: #6366F1;
     --clr-success: #22C55E;
+
+    /* --nav-logo: url("images/logo.svg");
+    --appstore-img: url("images/appstore-light.svg.svg");
+    --googleplay-img: url("images/googleplay-light.svg fill.svg"); */
+
+    --discover-btn: #fff;
+    --input-clr: #fff;
+
+    --start-clr: #6365f11e;
+    --end-clr: #db46ef17;
 }
+
+html {
+    color-scheme: dark;
+}
+
+.dark {
+     color-scheme: dark;
+     --clr-bg: #0B0F19;
+     --gray-900: #F3F6FF;
+     --gray-800: #E2E5F1;
+     --gray-700: #B4B7C9;
+     --gray-500: #565973;
+     --gray-300: #33354D;
+     --gray-100: #151822;
+
+     --nav-logo: url("images/logo_dark.svg");
+     --appstore-img: url("images/appstore-dark.svg.svg");
+     --googleplay-img: url("images/googleplay-dark.svg.svg");
+     --discover-arrow: url("images/white_arrow_bigger.svg");
+     --next-arrow: url("images/white_arrow_smaller_next.svg");
+
+     --discover-btn: #151822;
+     --input-clr: #151822;
+ }
 
 body {
     font-family: "Manrope", system-ui;
+    background-color: var(--clr-bg);
+}
+
+/* Light / dark mode switches */
+.nav-logo {
+    content: var(--nav-logo);
+}
+
+.appstore-img {
+    content: var(--appstore-img);
+}
+
+.googleplay-img {
+    content: var(--googleplay-img);
+}
+
+.discover-arrow-img {
+    content: var(--discover-arrow);
+}
+
+.next-arrow-img {
+    content: var(--next-arrow);
 }
 
 /* UTILITY CLASSES */
@@ -137,7 +194,7 @@ nav {
     color: var(--btn-text-clr);
 }
 
-.darkmode-switch {
+.darkmode-toggle {
     gap: 1rem;
 }
 
@@ -211,9 +268,9 @@ nav {
     display: flex;
     background-image: radial-gradient(
         farthest-side at 50% 100%, 
-        #6365f11e,
-        #db46ef17, 
-        rgb(255, 255, 255));
+        var(--start-clr),
+        var(--end-clr), 
+        var(--clr-bg));
         flex-direction: column;
         position: relative;
         justify-content: center;
@@ -233,7 +290,7 @@ nav {
 
 .right-showcase {
     display: none;
-    width: 60svh;
+    /* width: 60svh; */
 
     img {
         width: 90%;
@@ -274,7 +331,7 @@ nav {
 .btn-discover {
     width: 3rem;
     height: 3rem;
-    background-color: var(--btn-text-clr);
+    background-color: var(--discover-btn);
     border-radius: 50%;
     border: 0px;
 }
@@ -382,7 +439,6 @@ nav {
 /* Learn more section */
 .learnmore-background{
     display: none;
-    /* margin-inline: 4%; */
     
     button {
         background-color: var(--clr-primary);
@@ -435,12 +491,12 @@ ul li {
 }
 
 .testimonial-one {
-    background-color: var(--btn-text-clr);
+    background-color: var(--clr-bg);
     max-width: 500px;
 }
 
 .testimonial-two {
-    background-color: var(--btn-text-clr);
+    background-color: var(--clr-bg);
     max-width: 450px;
 }
 
@@ -498,7 +554,8 @@ ul li {
     padding-block: 1rem;
 }
 
-.faq-btn1, .faq-btn2, .prev-btn, .prev-btn1, .prev-btn2 {
+.faq-btn1, .faq-btn2, .next-btn, .next-btn1, .next-btn2 {
+    background-color: var(--discover-btn);
     width: 2.8em;
     height: 2.8em;
     aspect-ratio: 1;
@@ -518,19 +575,19 @@ ul li {
     display: none;
 }
 
-.prev-btn1 {
+.next-btn1 {
     display: none;
 }
 
-.prev-btn2 {
+.next-btn2 {
     display: block;
 }
 
-.prev-btn, .prev-btn1, .prev-btn2 {
+.next-btn, .next-btn1, .next-btn2 {
     background-color: var(--gray-100);
 }
 
-.faq-btn1 img, .faq-btn2 img, .prev-btn img, .prev-btn1 img, .prev-btn2 img {
+.faq-btn1 img, .faq-btn2 img, .next-btn img, .next-btn1 img, .next-btn2 img {
     scale: 30%;
 }
 
@@ -569,7 +626,7 @@ ul li {
 }
 
 .further-questions button {
-    background-color: var(--btn-text-clr);
+    background-color: var(--clr-bg);
     font-family: "Manrope", system-ui;
     font-weight: 600;
     border: 0px;    
@@ -640,6 +697,7 @@ footer {
 }
 
 .email-input {
+    background-color: var(--input-clr);
     border-radius: .5rem 0 0 .5rem;
     border: var(--gray-300) solid 1px;
     font-family: "Manrope", system-ui;
@@ -704,14 +762,43 @@ input::placeholder {
         margin-inline: 8rem;
     }
 
-    /* .showcase {
-        display: flex;
+    .showcase {
+        padding-top: 4rem;
+        display: grid;
+        grid-template-columns: 1.3fr 2fr;
+        grid-template-rows: .2fr .9fr auto auto;
     }
 
-    .showcase-grid {
+    .showcase header {
+        grid-column: 1 / span 2;
+        grid-row: 1;
+        text-align: center;
+    }
+
+    .text-download-wrapper {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    /* .btn-download {
+        width: 90%;
+    }  */
+
+    .right-showcase {
+        display: grid;
+        grid-column: 2;
+        grid-row: 2 / span 4;
+        justify-content: flex-end
+/* 
+        img {
+            justify-self: right;
+        } */
+    }
+
+    /* .showcase-grid {
         display: flex;
         flex-direction: column;
-    } */
+    } */ 
 
     .mobile-showcase {
         justify-content: space-between;
@@ -724,8 +811,12 @@ input::placeholder {
         margin-bottom: 3rem;
     }
 
-    .showcase br, .right-showcase   {
+    .showcase br {
         display: block;
+    }
+
+    .right-showcase {
+        display: flex;
     }
 
     .download-buttons {
@@ -741,6 +832,11 @@ input::placeholder {
         img {
             width: 70%;
         }
+    }
+
+    .discoverMore-wrapper {
+        align-self: flex-end;
+        grid-row: 4;
     }
 
     .discoverMore {
@@ -846,11 +942,11 @@ input::placeholder {
         display: block;
     }
   
-    .prev-btn1 {
+    .next-btn1 {
         display: block;
     }
 
-    .prev-btn2 {
+    .next-btn2 {
         display: none;
     }
 
@@ -951,20 +1047,24 @@ input::placeholder {
         grid-row: 2;
     }
 
+    .btn-download {
+        width: 40%;
+    }
+
     .right-showcase {
         grid-column: 2;
         grid-row: 1 / span 4;
     }
 
     .displayOne {
-        margin: 0 8rem 0 0;
+        margin: 0;
     }
 
-    .mobile-showcase {
+    /* .mobile-showcase {
         display: grid;
-        /* justify-content: space-between;
-        align-items: flex-end; */
-    }
+        justify-content: space-between;
+        align-items: flex-end;
+    } */
 
     .discoverMore-wrapper {
         grid-column: 1;
@@ -992,10 +1092,6 @@ input::placeholder {
     .app-features-phone {
         display: flex;
         align-items: flex-start;
-
-        img {
-        width: 90%;
-        }
     }
     
     .app-features h2, .app-features p {
