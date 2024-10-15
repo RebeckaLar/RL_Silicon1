@@ -1019,7 +1019,7 @@ input::placeholder {
     }  
 }
 
-@media (width >= 1610px) {
+@media (width >= 1920px) {
         /* Desktop - NAVBAR */
     .bodytext-s {
         font-size: .9rem;
@@ -1208,9 +1208,6 @@ input::placeholder {
     }
 
     /* Desktop FOOTER */
-    /* footer {
-        max-width: 1296px;
-    } */
     .subscribe{
         padding-block: 4rem;
         padding-inline: 7rem;
